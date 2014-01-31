@@ -9,14 +9,14 @@ package hillclimber;
  *
  * @author Win7Turbo
  */
-public class HillClimber
+public class HillClimberMain
 {
     /**
      * @param args the command line arguments
      */
     public static void main( String[] args )
     {
-        HClimberAlgo aHClimberAlgo = new HClimberAlgo();
+        HillClimberAlgorithm aHClimberAlgo = new HillClimberAlgorithm();
         aHClimberAlgo.climber();
 
     }
