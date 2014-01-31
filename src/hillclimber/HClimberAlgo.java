@@ -12,15 +12,18 @@ import java.util.Scanner;
  */
 public class HClimberAlgo
 {
-private int MAX = 0;
-private int N = 0;
-private double x1 = 0.0;
-private double x2 = 0.0;
-private double x3 = 0.0;
-private double fvc = 0.0;
+private int MAX = 0; // number of times to process
+private int N = 0; // number of verteces
+private double x1OfDesiredVertex = 0.0; // first point of random vector
+private double x2OfDesiredVertex = 0.0; // second point of random vector
+private double x3OfDesiredVertex = 0.0; // third point of random vectors
+private double DESIRED_FUNCTION_VALUE = 0.0; // function (v_c) - desired value to reach by vectors
 
 
-
+    /* Hill Climber Algorithm
+     * Take a vector, then generate random vectors and apply the function
+     * (x1^2 + x2^2 + x3^2) to a find the true mininum vector.
+     */
     public void climber()
     {
        Scanner keyboard = new Scanner(System.in);
@@ -29,19 +32,30 @@ private double fvc = 0.0;
 
        //test to check for keyboard input
        System.out.println( "MAX is " + MAX );
+       int i = 0;
+       while ( i < MAX)
+       {
 
-       //random number generator between -10 and 15
-       x1 = -10 + (Math.random() * ((15 - (-10)) + 1));
-       System.out.println("The random x1 is " + x1);
+            //random number generator between -10 and 15
+            x1OfDesiredVertex = -10 + (Math.random() * ((15 - (-10)) + 1));
+            //println to test output
+            System.out.println("The random x1 is " + x1OfDesiredVertex);
 
-       x2 = -10 + (Math.random() * ((15 - (-10)) + 1));
-       System.out.println("The random x2 is " + x2);
+            x2OfDesiredVertex = -10 + (Math.random() * ((15 - (-10)) + 1));
+            //println to test output
+            System.out.println("The random x2 is " + x2OfDesiredVertex);
 
-       x3 = -10 + (Math.random() * ((15 - (-10)) + 1));
-       System.out.println("The random x3 is " + x3);
+            x3OfDesiredVertex = -10 + (Math.random() * ((15 - (-10)) + 1));
+            //println to test output
+            System.out.println("The random x3 is " + x3OfDesiredVertex);
 
-       fvc = ((x1)*(x1)) + ((x2)*(x2)) + ((x3)*(x3));
-       System.out.format ("f(vc) = %.2f%n", fvc);
+
+            DESIRED_FUNCTION_VALUE = ((x1OfDesiredVertex)*(x1OfDesiredVertex)) +
+            ((x2OfDesiredVertex)*(x2OfDesiredVertex)) + ((x3OfDesiredVertex)*(x3OfDesiredVertex));
+            System.out.format ("%d Vector Value = %.2f%n%n", i+1 , DESIRED_FUNCTION_VALUE);
+
+            i++;
+       }
     }
 
     }
