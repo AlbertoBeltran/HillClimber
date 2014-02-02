@@ -1,4 +1,3 @@
-
 package hillclimber;
 
 
@@ -12,6 +11,7 @@ public class RandomVectorGenerator
 {
     private int N = 0; // number of vectors
     private double fvc = 0; // function of v_c
+    private double vNew = 0; // smallest value of vector
     private double xOfRandomVector = 0.0; // first point of random vector
     private double yOfRandomVector = 0.0; // second point of random vector
     private double zOfRandomVector = 0.0; // third point of random vectors
@@ -43,7 +43,6 @@ public class RandomVectorGenerator
             //println to test output
             System.out.println("The random x3 is " + zOfRandomVector);
 
-
             fvc = ( ( xOfRandomVector ) * ( xOfRandomVector ) ) +
               ( ( yOfRandomVector ) * ( yOfRandomVector ) ) + ( ( zOfRandomVector ) *
               ( zOfRandomVector ) );
@@ -51,21 +50,23 @@ public class RandomVectorGenerator
 
             array[t] = fvc;
 
-
-
-
-
         }
         System.out.println(Arrays.toString(array));
         double min = array[0];
         for ( int j = 1; j < array.length; j++ )
         {
-            if (array[j] < min)
-                  {
+            if ( array[j] < min )
+            {
                 min = array[j];
             }
         }
+        if ( vNew < min )
+        {
+            vNew = min;
+        }
+
         System.out.println("Min is " + min);
+        System.out.println("vNew is " + vNew);
+
     }
 }
-

@@ -23,7 +23,7 @@ public class DesiredVector
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Enter 3 points (x, y, & z - between -10 & 15) " +
-        "to create a Desired Vector.\n" +
+          "to create a Desired Vector.\n" +
           "Hit enter after every point");
         xOfDesiredFunctionValue = keyboard.nextDouble();
         yOfDesiredFunctionValue = keyboard.nextDouble();
@@ -39,7 +39,9 @@ public class DesiredVector
     }
     /*
      * gets DESIRED_FUNCTION_VALUE
+     * returns DESIRED_FUNCTION_VALUE
      */
+
     public double getDesiredFunctionValue()
     {
         return DESIRED_FUNCTION_VALUE;
