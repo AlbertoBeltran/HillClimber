@@ -1,6 +1,6 @@
 package hillclimber;
 
-
+import java.util.Scanner;
 import java.util.Arrays;
 
 /**
@@ -18,12 +18,12 @@ public class RandomVectorGenerator
 
     public void randomVector()
     {
-        java.util.Scanner keyboard = new java.util.Scanner(java.lang.System.in);
-        java.lang.System.out.println("Enter Number of Random Vectors to create");
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter Number of Random Vectors to create");
         N = keyboard.nextInt();
 
         //test to check for keyboard input
-        java.lang.System.out.println("Number of random vectors is " + N + "\n");
+        System.out.println("Number of random vectors is " + N + "\n");
         // loop to process random vector functions
         double[] array;
         array = new double[N];
@@ -33,15 +33,15 @@ public class RandomVectorGenerator
             //random number generator between -10 and 15
             xOfRandomVector = -10 + ( Math.random() * ( ( 15 - ( -10 ) ) ) );
             //println to test output
-            System.out.println("The random x1 is " + xOfRandomVector);
+            System.out.println("The random x is " + xOfRandomVector);
 
             yOfRandomVector = -10 + ( Math.random() * ( ( 15 - ( -10 ) ) ) );
             //println to test output
-            System.out.println("The random x2 is " + yOfRandomVector);
+            System.out.println("The random y is " + yOfRandomVector);
 
             zOfRandomVector = -10 + ( Math.random() * ( ( 15 - ( -10 ) ) ) );
             //println to test output
-            System.out.println("The random x3 is " + zOfRandomVector);
+            System.out.println("The random z is " + zOfRandomVector);
 
             fvc = ( ( xOfRandomVector ) * ( xOfRandomVector ) ) +
               ( ( yOfRandomVector ) * ( yOfRandomVector ) ) + ( ( zOfRandomVector ) *
