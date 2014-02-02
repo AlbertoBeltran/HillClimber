@@ -35,7 +35,7 @@ public class DesiredVector
 
         // calls the randomeVortex() method to generate random Vortex
         RandomVectorGenerator x = new RandomVectorGenerator();
-        x.randomVortex();
+        x.randomVector();
     }
     /*
      * gets DESIRED_FUNCTION_VALUE

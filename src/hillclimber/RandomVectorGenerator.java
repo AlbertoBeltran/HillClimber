@@ -1,61 +1,71 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package hillclimber;
+
+
+import java.util.Arrays;
+
 /**
  *
- * @author Win7Turbo
+ * @author Alberto Beltran
  */
 public class RandomVectorGenerator
 {
     private int N = 0; // number of vectors
     private double fvc = 0; // function of v_c
-    private double xOfRandomVertex = 0.0; // first point of random vector
-    private double yOfRandomVertex = 0.0; // second point of random vector
-    private double zOfRandomVertex = 0.0; // third point of random vectors
+    private double xOfRandomVector = 0.0; // first point of random vector
+    private double yOfRandomVector = 0.0; // second point of random vector
+    private double zOfRandomVector = 0.0; // third point of random vectors
 
-    public void randomVortex()
+    public void randomVector()
     {
-    java.util.Scanner keyboard = new java.util.Scanner(java.lang.System.in);
+        java.util.Scanner keyboard = new java.util.Scanner(java.lang.System.in);
         java.lang.System.out.println("Enter Number of Random Vectors to create");
         N = keyboard.nextInt();
 
         //test to check for keyboard input
         java.lang.System.out.println("Number of random vectors is " + N + "\n");
-    // loop to process random vector functions
-        int t = 0;
-        while ( t < N )
+        // loop to process random vector functions
+        double[] array;
+        array = new double[N];
+
+        for ( int t = 0; t < N; t++ )
         {
             //random number generator between -10 and 15
-            xOfRandomVertex = -10 + ( Math.random() * ( ( 15 - ( -10 ) ) + 1 ) );
+            xOfRandomVector = -10 + ( Math.random() * ( ( 15 - ( -10 ) ) ) );
             //println to test output
-            System.out.println("The random x1 is " + xOfRandomVertex);
+            System.out.println("The random x1 is " + xOfRandomVector);
 
-            yOfRandomVertex = -10 + ( Math.random() * ( ( 15 - ( -10 ) ) + 1 ) );
+            yOfRandomVector = -10 + ( Math.random() * ( ( 15 - ( -10 ) ) ) );
             //println to test output
-            System.out.println("The random x2 is " + yOfRandomVertex);
+            System.out.println("The random x2 is " + yOfRandomVector);
 
-            zOfRandomVertex = -10 + ( Math.random() * ( ( 15 - ( -10 ) ) + 1 ) );
+            zOfRandomVector = -10 + ( Math.random() * ( ( 15 - ( -10 ) ) ) );
             //println to test output
-            System.out.println("The random x3 is " + zOfRandomVertex);
+            System.out.println("The random x3 is " + zOfRandomVector);
 
 
-            fvc = ( ( xOfRandomVertex ) * ( xOfRandomVertex ) ) +
-              ( ( yOfRandomVertex ) * ( yOfRandomVertex ) ) + ( ( zOfRandomVertex ) *
-              ( zOfRandomVertex ) );
+            fvc = ( ( xOfRandomVector ) * ( xOfRandomVector ) ) +
+              ( ( yOfRandomVector ) * ( yOfRandomVector ) ) + ( ( zOfRandomVector ) *
+              ( zOfRandomVector ) );
             System.out.format("#%d Vector Value = %.2f%n%n", t + 1, fvc);
 
-            /*
-            if (DESIRED_FUNCTION_VALUE == fvc){
-                vNew = fvc;
-            }
-            else{
-                vNew =
-            }
-            * */
-            t++;
-        }
+            array[t] = fvc;
+
+
+
+
 
         }
+        System.out.println(Arrays.toString(array));
+        double min = array[0];
+        for ( int j = 1; j < array.length; j++ )
+        {
+            if (array[j] < min)
+                  {
+                min = array[j];
+            }
+        }
+        System.out.println("Min is " + min);
+    }
 }
+

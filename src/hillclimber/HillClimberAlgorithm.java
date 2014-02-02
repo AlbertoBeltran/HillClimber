@@ -61,7 +61,7 @@ public class HillClimberAlgorithm
 
         // calls the randomeVortex() method to generate random Vortex
         RandomVectorGenerator aRandomGenerator = new RandomVectorGenerator();
-        aRandomGenerator.randomVortex();
+        aRandomGenerator.randomVector();
 
         /*
         // loop to process random vector functions
