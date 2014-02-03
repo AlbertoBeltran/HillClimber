@@ -22,7 +22,7 @@ public class DesiredVector
     {
         Scanner keyboard = new Scanner(System.in);
 
-        System.out.println("Enter 3 points (x, y, & z - between -10 & 15) " +
+        System.out.println("Enter 3 points, an x, y, & z (between -10 & 15), " +
           "to create a Desired Vector.\n" +
           "Hit enter after every point");
         xOfDesiredFunctionValue = keyboard.nextDouble();
@@ -33,9 +33,6 @@ public class DesiredVector
           ( zOfDesiredFunctionValue ) * ( zOfDesiredFunctionValue );
         //System.out.format ("Desired Function Value = %.2f%n%n", DESIRED_FUNCTION_VALUE);
 
-        // calls the randomeVortex() method to generate random Vortex
-        RandomVectorGenerator x = new RandomVectorGenerator();
-        x.randomVector();
     }
     /*
      * gets DESIRED_FUNCTION_VALUE
